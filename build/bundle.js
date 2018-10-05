@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/containers/Home/index.js":
+/*!**************************************!*\
+  !*** ./src/containers/Home/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Home = function Home() {\n  return _react2.default.createElement(\n    'div',\n    null,\n    'home'\n  );\n}; /*\n    * @Author: Lac \n    * @Date: 2018-10-05 22:26:38 \n    * @Last Modified by:   Lac \n    * @Last Modified time: 2018-10-05 22:26:38 \n    */\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/containers/Home/index.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -94,7 +106,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar express = __webpack_require__(/*! express */ \"express\");\nvar app = express();\n\napp.get('/', function (req, res) {\n  res.send('\\n    <html>\\n      <body>\\n        <h1>hello SSR</h1>\\n      </body>\\n    </html>\\n    ');\n});\n\nvar server = app.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/*\n * @Author: Lac \n * @Date: 2018-10-05 22:26:28 \n * @Last Modified by: Lac\n * @Last Modified time: 2018-10-05 22:28:25\n */\nvar app = (0, _express2.default)();\nvar content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));\n\napp.get('/', function (req, res) {\n  res.send('\\n    <html>\\n      <head>\\n        <title>ssr</title>\\n      </head>\\n      <body>\\n        ' + content + '\\n      </body>\\n    </html>\\n  ');\n});\n\nvar server = app.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -106,6 +118,28 @@ eval("\n\nvar express = __webpack_require__(/*! express */ \"express\");\nvar ap
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_%22react%22?");
+
+/***/ }),
+
+/***/ "react-dom/server":
+/*!***********************************!*\
+  !*** external "react-dom/server" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:///external_%22react-dom/server%22?");
 
 /***/ })
 
