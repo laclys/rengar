@@ -1,0 +1,14 @@
+{
+  "name": "rengar",
+  "version": "1.0.0",
+  "description": "React SSR",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Lac",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.5.2"
+  }
+}
