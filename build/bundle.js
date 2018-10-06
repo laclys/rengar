@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/server/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -94,19 +94,31 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Home = function Home() {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'div',\n      null,\n      'home'\n    ),\n    _react2.default.createElement(\n      'button',\n      { onClick: function onClick() {\n          alert('click!');\n        } },\n      'click'\n    )\n  );\n}; /*\n    * @Author: Lac \n    * @Date: 2018-10-05 22:26:38 \n    * @Last Modified by: Lac\n    * @Last Modified time: 2018-10-06 13:42:32\n    */\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/containers/Home/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Home = function Home() {\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      'div',\n      null,\n      'home'\n    ),\n    _react2.default.createElement(\n      'button',\n      { onClick: function onClick() {\n          alert('click');\n        } },\n      'click'\n    )\n  );\n}; /*\n    * @Author: Lac \n    * @Date: 2018-10-05 22:26:38 \n    * @Last Modified by: Lac\n    * @Last Modified time: 2018-10-06 23:11:25\n    */\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/containers/Home/index.js?");
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/routes.js":
+/*!***********************!*\
+  !*** ./src/routes.js ***!
+  \***********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/*\n * @Author: Lac \n * @Date: 2018-10-05 22:26:28 \n * @Last Modified by: Lac\n * @Last Modified time: 2018-10-06 13:40:49\n */\nvar app = (0, _express2.default)();\n\napp.use(_express2.default.static('public')); // 只要请求静态文件就在public这个文件夹中找\n\nvar content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));\n\napp.get('/', function (req, res) {\n  res.send('\\n    <html>\\n      <head>\\n        <title>ssr</title>\\n      </head>\\n      <body>\\n        <div id=\\'root\\' >' + content + '</div>\\n        <script src=\\'/index.js\\' ></script>\\n      </body>\\n    </html>\\n  ');\n});\n\nvar server = app.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _react2.default.createElement(\n  'div',\n  null,\n  _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _Home2.default })\n);\n\n//# sourceURL=webpack:///./src/routes.js?");
+
+/***/ }),
+
+/***/ "./src/server/index.js":
+/*!*****************************!*\
+  !*** ./src/server/index.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _routes = __webpack_require__(/*! ../routes */ \"./src/routes.js\");\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nvar _Home = __webpack_require__(/*! ../containers/Home */ \"./src/containers/Home/index.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/*\n * @Author: Lac \n * @Date: 2018-10-05 22:26:28 \n * @Last Modified by: Lac\n * @Last Modified time: 2018-10-06 23:12:22\n */\nvar app = (0, _express2.default)();\n\napp.use(_express2.default.static('public')); // 只要请求静态文件就在public这个文件夹中找\n\napp.get('/', function (req, res) {\n\n  var content = (0, _server.renderToString)(_react2.default.createElement(\n    _reactRouterDom.StaticRouter,\n    { location: req.path, context: {} },\n    _routes2.default\n  ));\n\n  res.send('\\n    <html>\\n      <head>\\n        <title>ssr</title>\\n      </head>\\n      <body>\\n        <div id=\\'root\\' >' + content + '</div>\\n        <script src=\\'/index.js\\' ></script>\\n      </body>\\n    </html>\\n  ');\n});\n\nvar server = app.listen(3000);\n\n//# sourceURL=webpack:///./src/server/index.js?");
 
 /***/ }),
 
@@ -140,6 +152,17 @@ eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:///external_%22react-dom/server%22?");
+
+/***/ }),
+
+/***/ "react-router-dom":
+/*!***********************************!*\
+  !*** external "react-router-dom" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-router-dom\");\n\n//# sourceURL=webpack:///external_%22react-router-dom%22?");
 
 /***/ })
 
