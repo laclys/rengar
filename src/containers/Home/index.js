@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:38 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-07 22:03:30
+ * @Last Modified time: 2018-10-08 22:42:26
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -32,8 +32,9 @@ class Home extends Component {
   }
 }
 
-Home.loadData = () => {
+Home.loadData = (store) => {
   // 负责在服务器端渲染之前，把这个路由需要的数据提前加载好
+  return store.dispatch(getHomeList())
 }
 
 
