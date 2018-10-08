@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:38 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-08 23:34:22
+ * @Last Modified time: 2018-10-08 23:45:16
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -13,7 +13,9 @@ import Header from '../../components/Header'
 class Home extends Component {
 
   componentDidMount() {
-    this.props.getHomeList()
+    if (!this.props.list.length) {
+      this.props.getHomeList()
+    }
   }
 
   render() {
