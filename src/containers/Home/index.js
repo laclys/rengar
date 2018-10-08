@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:38 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-08 22:42:26
+ * @Last Modified time: 2018-10-08 23:02:36
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -21,7 +21,7 @@ class Home extends Component {
       <div>
         <Header />
         { this.getList() }
-        <button onClick={()=>{alert('click')}}>click</button>
+          <button onClick={()=>{alert('click')}}>click</button>
       </div>
     )
   }
