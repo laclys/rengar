@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-07 00:51:19 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-07 14:58:43
+ * @Last Modified time: 2018-10-08 23:39:37
  */
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
@@ -12,8 +12,11 @@ const reducer = combineReducers({
   home: homeReducer
 })
 
-const getStore = () => {
+export const getStore = () => {
   return createStore(reducer, applyMiddleware(thunk))
 }
 
-export default getStore
+export const getClientStore = () => {
+  const defaultState = window.context.state
+  return createStore(reducer, defaultState, applyMiddleware(thunk))
+}

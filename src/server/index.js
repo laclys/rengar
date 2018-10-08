@@ -2,11 +2,11 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:28 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-08 23:17:33
+ * @Last Modified time: 2018-10-08 23:37:27
  */
 import express from 'express'
 import { render } from './utils'
-import getStore from '../store'
+import { getStore } from '../store'
 import { matchRoutes } from 'react-router-config'
 import routes from '../routes'
 

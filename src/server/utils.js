@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-06 23:20:30 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-08 22:57:41
+ * @Last Modified time: 2018-10-08 23:35:37
  */
 import React from 'react'
 import { renderToString } from 'react-dom/server'
@@ -29,6 +29,11 @@ export const render = (store, routes, req) => {
         </head>
         <body>
           <div id='root' >${ content }</div>
+          <script>
+            window.context = {
+              state: ${ JSON.stringify(store.getState()) }
+            }
+          </script>
           <script src='/index.js' ></script>
         </body>
       </html>
