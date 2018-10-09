@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:38 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-08 23:45:16
+ * @Last Modified time: 2018-10-09 23:17:26
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -14,7 +14,7 @@ class Home extends Component {
 
   componentDidMount() {
     if (!this.props.list.length) {
-      this.props.getHomeList()
+      this.props.getHomeList(false)
     }
   }
 
@@ -36,7 +36,7 @@ class Home extends Component {
 
 Home.loadData = (store) => {
   // 负责在服务器端渲染之前，把这个路由需要的数据提前加载好
-  return store.dispatch(getHomeList())
+  return store.dispatch(getHomeList(true))
 }
 
 
