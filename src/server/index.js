@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:28 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-09 23:17:47
+ * @Last Modified time: 2018-10-09 23:19:43
  */
 import express from 'express'
 import proxy from 'express-http-proxy'
@@ -16,7 +16,6 @@ app.use(express.static('public')) // 只要请求静态文件就在public这个�
 
 app.use('/api', proxy('http://47.95.113.63', {
   proxyReqPathResolver: function(req) {
-    console.log(req.url)
     return '/ssr/api' + req.url
   }
 }))
