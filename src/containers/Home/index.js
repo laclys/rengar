@@ -2,13 +2,12 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:38 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-10 21:59:26
+ * @Last Modified time: 2018-10-10 22:41:18
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { getHomeList } from './store/actions'
-import Header from '../../components/Header'
 
 class Home extends Component {
 
@@ -21,7 +20,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header />
         { this.getList() }
           <button onClick={()=>{alert('click')}}>click</button>
       </div>
