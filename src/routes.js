@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-07 00:55:19 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-10 22:38:49
+ * @Last Modified time: 2018-10-13 22:23:01
  */
 import React from 'react'
 import {
@@ -32,6 +32,7 @@ import Login from './containers/Login'
 export default [{
   path: '/',
   component: App,
+  loadData: App.loadData,
   key: 'app',
   routes: [{
       path: '/',
