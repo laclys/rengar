@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-13 22:24:45 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-13 23:17:31
+ * @Last Modified time: 2018-10-14 00:54:05
  */
 import { CHANGE_LOGIN } from './constants'
 
@@ -13,7 +13,7 @@ const changeLogin = (value) => ({
 
  export const getHeaderInfo = () => {
   return (dispatch, getState, axiosInstance) => {
-    return axiosInstance.get('/api/isLogin.json?secret=M5s2sPneDE')
+    return axiosInstance.get('/api/isLogin.json')
       .then(res => {
         const { login } = res.data.data
         dispatch(changeLogin(login))
@@ -23,7 +23,7 @@ const changeLogin = (value) => ({
 
  export const login = () => {
   return (dispatch, getState, axiosInstance) => {
-    return axiosInstance.get('/api/login.json?secret=M5s2sPneDE')
+    return axiosInstance.get('/api/login.json')
       .then(res => {
         const { login } = res.data.data
         dispatch(changeLogin(login))
@@ -33,7 +33,7 @@ const changeLogin = (value) => ({
 
  export const logout = () => {
   return (dispatch, getState, axiosInstance) => {
-    return axiosInstance.get('/api/logout.json?secret=M5s2sPneDE')
+    return axiosInstance.get('/api/logout.json')
       .then(res => {
         const { login } = res.data.data
         dispatch(changeLogin(login))
