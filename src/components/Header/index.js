@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-13 21:43:00 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-13 23:17:13
+ * @Last Modified time: 2018-10-14 00:19:07
  */
 import React, { Fragment, Component } from 'react'
 import { Link } from 'react-router-dom'
@@ -19,7 +19,7 @@ class Header extends Component {
       <br />
       {
         login ? <Fragment>
-          <Link to='/login' >Translate</Link>
+          <Link to='/translation' >Translate</Link>
           <br />
           <div onClick={ handleLogout } >Logout</div>
         </Fragment> : <div onClick={ handleLogin } >Login</div>

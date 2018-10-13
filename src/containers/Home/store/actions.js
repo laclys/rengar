@@ -2,10 +2,8 @@
  * @Author: Lac 
  * @Date: 2018-10-07 15:08:40 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-13 21:31:42
+ * @Last Modified time: 2018-10-14 00:26:28
  */
-import axios from 'axios'
-
 import { CHANGE_LIST } from './constants'
 
 const changeList = (list) => ({

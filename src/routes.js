@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-07 00:55:19 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-13 22:23:01
+ * @Last Modified time: 2018-10-14 00:24:08
  */
 import React from 'react'
 import {
@@ -11,23 +11,7 @@ import {
 
 import App from './app'
 import Home from './containers/Home'
-import Login from './containers/Login'
-
-// export default [
-//   {
-//     path: '/',
-//     component: Home,
-//     exact: true,
-//     loadData: Home.loadData,
-//     key: 'home'
-//   },
-//   {
-//     path: '/login',
-//     component: Login,
-//     exact: true,
-//     key: 'login'
-//   }
-// ]
+import Translation from './containers/Translation'
 
 export default [{
   path: '/',
@@ -42,10 +26,11 @@ export default [{
       key: 'home'
     },
     {
-      path: '/login',
-      component: Login,
+      path: '/translation',
+      component: Translation,
       exact: true,
-      key: 'login'
+      loadData: Translation.loadData,
+      key: 'translation'
     }
   ]
 }]
