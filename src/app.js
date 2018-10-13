@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-10 22:18:12 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-13 22:29:02
+ * @Last Modified time: 2018-10-13 23:39:17
  */
 import React from 'react'
 import Header from './components/Header'
@@ -18,7 +18,7 @@ const App = (props) => {
 }
 
 App.loadData = (store) => {
-  store.dispatch(actions.getHeaderInfo())
+  return store.dispatch(actions.getHeaderInfo())
 }
 
 export default App

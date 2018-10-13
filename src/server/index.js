@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:28 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-09 23:19:43
+ * @Last Modified time: 2018-10-13 23:42:03
  */
 import express from 'express'
 import proxy from 'express-http-proxy'
@@ -21,7 +21,7 @@ app.use('/api', proxy('http://47.95.113.63', {
 }))
 
 app.get('*', function(req, res) {
-  const store = getStore() 
+  const store = getStore(req) 
   // 根据路由的路径，往store里面加数据
   const matchedRoutes = matchRoutes(routes, req.path)
   const promises = []
