@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:28 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-15 21:50:20
+ * @Last Modified time: 2018-10-15 22:32:26
  */
 import express from 'express'
 import proxy from 'express-http-proxy'
@@ -33,7 +33,10 @@ app.get('*', function (req, res) {
   const promises = []
   matchedRoutes.forEach(item => {
     if (item.route.loadData) {
-      promises.push(item.route.loadData(store))
+      const promise = new Promise((resolve, reject) => {
+        item.route.loadData(store).then(resolve).catch(resolve)
+      })
+      promises.push(promise) // 不管数据加载成功还是失败，把能准备的数据都准备好。更好的容错不必担心那个接口请求失败。都会执行promise.all
     }
   })
   Promise.all(promises).then(() => {
