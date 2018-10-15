@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-07 00:55:19 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-14 00:24:08
+ * @Last Modified time: 2018-10-15 21:06:24
  */
 import React from 'react'
 import {
@@ -12,6 +12,7 @@ import {
 import App from './app'
 import Home from './containers/Home'
 import Translation from './containers/Translation'
+import NotFound from './containers/NotFound'
 
 export default [{
   path: '/',
@@ -31,6 +32,9 @@ export default [{
       exact: true,
       loadData: Translation.loadData,
       key: 'translation'
+    },
+    {
+      component: NotFound,
     }
   ]
 }]
