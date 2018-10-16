@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-06 23:20:30 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-15 21:29:22
+ * @Last Modified time: 2018-10-16 22:28:13
  */
 import React from 'react'
 import { renderToString } from 'react-dom/server'
@@ -20,10 +20,12 @@ export const render = (store, routes, req, context) => {
         </StaticRouter>
       </Provider>)
       
+    const cssStr = context.css ? context.css : ''
     return `
       <html>
         <head>
           <title>ssr</title>
+          <style>${ cssStr }</style>
         </head>
         <body>
           <div id='root' >${ content }</div>
