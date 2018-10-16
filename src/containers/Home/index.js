@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:38 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-16 22:25:12
+ * @Last Modified time: 2018-10-16 22:51:59
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -13,7 +13,7 @@ class Home extends Component {
 
   componentWillMount() {
     if (this.props.staticContext) {
-      this.props.staticContext.css = styles._getCss()
+      this.props.staticContext.css.push(styles._getCss())
     }
   }
 

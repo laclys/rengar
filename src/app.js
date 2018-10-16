@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-10 22:18:12 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-13 23:39:17
+ * @Last Modified time: 2018-10-16 22:46:38
  */
 import React from 'react'
 import Header from './components/Header'
@@ -11,7 +11,7 @@ import { actions } from './components/Header/store'
 const App = (props) => {
   return (
     <div>
-      <Header />
+      <Header staticContext={ props.staticContext } />
       { renderRoutes(props.route.routes) }
     </div>
   )

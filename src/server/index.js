@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-05 22:26:28 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-15 22:32:26
+ * @Last Modified time: 2018-10-16 22:51:25
  */
 import express from 'express'
 import proxy from 'express-http-proxy'
@@ -40,7 +40,9 @@ app.get('*', function (req, res) {
     }
   })
   Promise.all(promises).then(() => {
-    const context = {}
+    const context = {
+      css: []
+    }
     const html = render(store, routes, req, context)
 
     if (context.action === 'REPLACE') {

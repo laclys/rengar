@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-10-06 23:20:30 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-16 22:28:13
+ * @Last Modified time: 2018-10-16 22:52:43
  */
 import React from 'react'
 import { renderToString } from 'react-dom/server'
@@ -20,7 +20,7 @@ export const render = (store, routes, req, context) => {
         </StaticRouter>
       </Provider>)
       
-    const cssStr = context.css ? context.css : ''
+    const cssStr = context.css.length ? context.css.join('\n') : ''
     return `
       <html>
         <head>
