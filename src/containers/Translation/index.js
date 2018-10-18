@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-10-06 23:15:38
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-14 00:45:51
+ * @Last Modified time: 2018-10-18 21:23:35
  */
 /*
  * @Author: Lac
@@ -37,10 +37,6 @@ class Translation extends Component {
   }
 }
 
-Translation.loadData = (store) => {
-  return store.dispatch(getTranslationList())
-}
-
 const mapStateToProps = state => ({
   list: state.translation.translationList,
   login: state.header.login
@@ -52,4 +48,10 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Translation)
+const ExportTranslation = connect(mapStateToProps, mapDispatchToProps)(Translation)
+
+ExportTranslation.loadData = (store) => {
+  return store.dispatch(getTranslationList())
+}
+
+export default ExportTranslation

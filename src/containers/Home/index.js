@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-10-05 22:26:38
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-16 22:51:59
+ * @Last Modified time: 2018-10-18 21:22:25
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -37,11 +37,6 @@ class Home extends Component {
   }
 }
 
-Home.loadData = (store) => {
-  // 负责在服务器端渲染之前，把这个路由需要的数据提前加载好
-  return store.dispatch(getHomeList())
-}
-
 const mapStateToProps = state => ({
   list: state.home.newsList
 })
@@ -52,4 +47,11 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+const ExportHome = connect(mapStateToProps, mapDispatchToProps)(Home)
+
+ExportHome.loadData = (store) => {
+  // 负责在服务器端渲染之前，把这个路由需要的数据提前加载好
+  return store.dispatch(getHomeList())
+}
+
+export default ExportHome
