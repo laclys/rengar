@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-10-13 21:43:00
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-18 21:58:56
+ * @Last Modified time: 2018-10-18 22:06:51
  */
 import React, { Fragment, Component } from 'react'
 import { Link } from 'react-router-dom'
@@ -13,19 +13,16 @@ import styles from './style.css'
 import withStyle from '../../withStyles'
 
 class Header extends Component {
-
   render () {
     const { login, handleLogin, handleLogout } = this.props
     return (
-      <div className={styles.test} >
-        <Link to='/'>Home</Link>
-        <br />
+      <div className={styles.container} >
+        <Link to='/' className={styles.item} >Home</Link>
         {
           login ? <Fragment>
-            <Link to='/translation' >Translate</Link>
-            <br />
-            <div onClick={handleLogout} >Logout</div>
-          </Fragment> : <div onClick={handleLogin} >Login</div>
+            <Link to='/translation' className={styles.item} >Translate</Link>
+            <div onClick={handleLogout} className={styles.item} >Logout</div>
+          </Fragment> : <div onClick={handleLogin} className={styles.item} >Login</div>
         }
       </div>
     )

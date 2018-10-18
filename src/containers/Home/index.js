@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-10-05 22:26:38
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-18 22:00:43
+ * @Last Modified time: 2018-10-18 22:11:38
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -12,7 +12,6 @@ import styles from './style.css'
 import withStyles from '../../withStyles'
 
 class Home extends Component {
-
   componentDidMount () {
     if (!this.props.list.length) {
       this.props.getList()
@@ -21,16 +20,15 @@ class Home extends Component {
 
   render () {
     return (
-      <div className={styles.test} >
+      <div className={styles.container} >
         { this.getList() }
-        <button onClick={() => { alert('click') }}>click</button>
       </div>
     )
   }
 
   getList () {
     const { list } = this.props
-    return list.map(item => <div key={item.id} >{ item.title }</div>)
+    return list.map(item => <div key={item.id} className={styles.item} >{ item.title }</div>)
   }
 }
 

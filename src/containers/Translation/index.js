@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-10-06 23:15:38
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-18 22:02:37
+ * @Last Modified time: 2018-10-18 22:13:01
  */
 /*
  * @Author: Lac
@@ -27,7 +27,7 @@ class Translation extends Component {
 
   render () {
     return this.props.login ? (
-      <div className={ styles.test } >
+      <div className={styles.container} >
         { this.getList() }
       </div>
     ) : <Redirect to='/' />
@@ -35,7 +35,7 @@ class Translation extends Component {
 
   getList () {
     const { list } = this.props
-    return list.map(item => <div key={item.id} >{ item.title }</div>)
+    return list.map(item => <div key={item.id} className={styles.item} >{ item.title }</div>)
   }
 }
 
