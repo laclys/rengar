@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-10-13 21:44:47 
+ * @Author: Lac
+ * @Date: 2018-10-13 21:44:47
  * @Last Modified by: Lac
  * @Last Modified time: 2018-10-13 22:55:53
  */
@@ -12,7 +12,7 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case CHANGE_LOGIN: 
+    case CHANGE_LOGIN:
       return {
         ...state,
         login: action.value

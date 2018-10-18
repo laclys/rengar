@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-10-10 22:18:12 
+ * @Author: Lac
+ * @Date: 2018-10-10 22:18:12
  * @Last Modified by: Lac
  * @Last Modified time: 2018-10-16 22:46:38
  */
@@ -11,7 +11,7 @@ import { actions } from './components/Header/store'
 const App = (props) => {
   return (
     <div>
-      <Header staticContext={ props.staticContext } />
+      <Header staticContext={props.staticContext} />
       { renderRoutes(props.route.routes) }
     </div>
   )

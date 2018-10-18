@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-10-13 21:43:00 
+ * @Author: Lac
+ * @Date: 2018-10-13 21:43:00
  * @Last Modified by: Lac
  * @Last Modified time: 2018-10-16 22:51:45
  */
@@ -12,27 +12,26 @@ import { actions } from './store'
 import styles from './style.css'
 
 class Header extends Component {
-
-  componentWillMount() {
+  componentWillMount () {
     if (this.props.staticContext) {
       this.props.staticContext.css.push(styles._getCss())
     }
   }
 
-  render() {
+  render () {
     const { login, handleLogin, handleLogout } = this.props
     return (
-      <div className={ styles.test } >
-      <Link to='/'>Home</Link>
-      <br />
-      {
-        login ? <Fragment>
-          <Link to='/translation' >Translate</Link>
-          <br />
-          <div onClick={ handleLogout } >Logout</div>
-        </Fragment> : <div onClick={ handleLogin } >Login</div>
-      }
-    </div> 
+      <div className={styles.test} >
+        <Link to='/'>Home</Link>
+        <br />
+        {
+          login ? <Fragment>
+            <Link to='/translation' >Translate</Link>
+            <br />
+            <div onClick={handleLogout} >Logout</div>
+          </Fragment> : <div onClick={handleLogin} >Login</div>
+        }
+      </div>
     )
   }
 }
@@ -42,10 +41,10 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
-  handleLogin() {
+  handleLogin () {
     dispatch(actions.login())
   },
-  handleLogout() {
+  handleLogout () {
     dispatch(actions.logout())
   }
 })

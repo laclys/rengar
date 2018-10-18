@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-10-07 00:13:34 
+ * @Author: Lac
+ * @Date: 2018-10-07 00:13:34
  * @Last Modified by: Lac
  * @Last Modified time: 2018-10-10 22:44:46
  */
@@ -13,11 +13,11 @@ import { renderRoutes } from 'react-router-config'
 import routes from '../routes'
 import { getClientStore } from '../store'
 
-const store = getClientStore() 
+const store = getClientStore()
 
 const App = () => {
   return (
-    <Provider store={ store } >
+    <Provider store={store} >
       <BrowserRouter>
         <div>
           { renderRoutes(routes) }

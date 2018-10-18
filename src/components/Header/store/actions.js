@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-10-13 22:24:45 
+ * @Author: Lac
+ * @Date: 2018-10-13 22:24:45
  * @Last Modified by: Lac
  * @Last Modified time: 2018-10-14 00:54:05
  */
@@ -11,7 +11,7 @@ const changeLogin = (value) => ({
   value: value
 })
 
- export const getHeaderInfo = () => {
+export const getHeaderInfo = () => {
   return (dispatch, getState, axiosInstance) => {
     return axiosInstance.get('/api/isLogin.json')
       .then(res => {
@@ -21,7 +21,7 @@ const changeLogin = (value) => ({
   }
 }
 
- export const login = () => {
+export const login = () => {
   return (dispatch, getState, axiosInstance) => {
     return axiosInstance.get('/api/login.json')
       .then(res => {
@@ -31,7 +31,7 @@ const changeLogin = (value) => ({
   }
 }
 
- export const logout = () => {
+export const logout = () => {
   return (dispatch, getState, axiosInstance) => {
     return axiosInstance.get('/api/logout.json')
       .then(res => {

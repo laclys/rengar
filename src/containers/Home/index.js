@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-10-05 22:26:38 
+ * @Author: Lac
+ * @Date: 2018-10-05 22:26:38
  * @Last Modified by: Lac
  * @Last Modified time: 2018-10-16 22:51:59
  */
@@ -8,33 +8,32 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { getHomeList } from './store/actions'
-import styles from'./style.css'
+import styles from './style.css'
 class Home extends Component {
-
-  componentWillMount() {
+  componentWillMount () {
     if (this.props.staticContext) {
       this.props.staticContext.css.push(styles._getCss())
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     if (!this.props.list.length) {
       this.props.getList()
     }
   }
 
-  render() {
+  render () {
     return (
-      <div className={ styles.test } >
+      <div className={styles.test} >
         { this.getList() }
-          <button onClick={()=>{alert('click')}}>click</button>
+        <button onClick={() => { alert('click') }}>click</button>
       </div>
     )
   }
 
-  getList() {
+  getList () {
     const { list } = this.props
-    return list.map(item => <div key={ item.id } >{ item.title }</div>)
+    return list.map(item => <div key={item.id} >{ item.title }</div>)
   }
 }
 
@@ -43,13 +42,12 @@ Home.loadData = (store) => {
   return store.dispatch(getHomeList())
 }
 
-
 const mapStateToProps = state => ({
   list: state.home.newsList
 })
 
 const mapDispatchToProps = dispatch => ({
-  getList() {
+  getList () {
     dispatch(getHomeList())
   }
 })

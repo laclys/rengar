@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-10-07 00:55:19 
+ * @Author: Lac
+ * @Date: 2018-10-07 00:55:19
  * @Last Modified by: Lac
  * @Last Modified time: 2018-10-15 21:06:24
  */
@@ -20,21 +20,21 @@ export default [{
   loadData: App.loadData,
   key: 'app',
   routes: [{
-      path: '/',
-      component: Home,
-      exact: true,
-      loadData: Home.loadData,
-      key: 'home'
-    },
-    {
-      path: '/translation',
-      component: Translation,
-      exact: true,
-      loadData: Translation.loadData,
-      key: 'translation'
-    },
-    {
-      component: NotFound,
-    }
+    path: '/',
+    component: Home,
+    exact: true,
+    loadData: Home.loadData,
+    key: 'home'
+  },
+  {
+    path: '/translation',
+    component: Translation,
+    exact: true,
+    loadData: Translation.loadData,
+    key: 'translation'
+  },
+  {
+    component: NotFound
+  }
   ]
 }]
