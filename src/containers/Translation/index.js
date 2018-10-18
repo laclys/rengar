@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-10-06 23:15:38
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-18 21:23:35
+ * @Last Modified time: 2018-10-18 22:02:37
  */
 /*
  * @Author: Lac
@@ -15,6 +15,8 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 import { getTranslationList } from './store/actions'
+import styles from './style.css'
+import withStyles from '../../withStyles'
 
 class Translation extends Component {
   componentDidMount () {
@@ -25,7 +27,7 @@ class Translation extends Component {
 
   render () {
     return this.props.login ? (
-      <div>
+      <div className={ styles.test } >
         { this.getList() }
       </div>
     ) : <Redirect to='/' />
@@ -48,7 +50,7 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-const ExportTranslation = connect(mapStateToProps, mapDispatchToProps)(Translation)
+const ExportTranslation = connect(mapStateToProps, mapDispatchToProps)(withStyles(Translation, styles))
 
 ExportTranslation.loadData = (store) => {
   return store.dispatch(getTranslationList())

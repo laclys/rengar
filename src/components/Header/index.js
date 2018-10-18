@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-10-13 21:43:00
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-16 22:51:45
+ * @Last Modified time: 2018-10-18 21:58:56
  */
 import React, { Fragment, Component } from 'react'
 import { Link } from 'react-router-dom'
@@ -10,13 +10,9 @@ import { connect } from 'react-redux'
 
 import { actions } from './store'
 import styles from './style.css'
+import withStyle from '../../withStyles'
 
 class Header extends Component {
-  componentWillMount () {
-    if (this.props.staticContext) {
-      this.props.staticContext.css.push(styles._getCss())
-    }
-  }
 
   render () {
     const { login, handleLogin, handleLogout } = this.props
@@ -49,4 +45,4 @@ const mapDispatch = (dispatch) => ({
   }
 })
 
-export default connect(mapState, mapDispatch)(Header)
+export default connect(mapState, mapDispatch)(withStyle(Header, styles))
