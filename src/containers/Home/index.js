@@ -2,10 +2,11 @@
  * @Author: Lac
  * @Date: 2018-10-05 22:26:38
  * @Last Modified by: Lac
- * @Last Modified time: 2018-10-18 22:11:38
+ * @Last Modified time: 2018-10-20 01:08:55
  */
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Helmet } from 'react-helmet'
 
 import { getHomeList } from './store/actions'
 import styles from './style.css'
@@ -20,9 +21,15 @@ class Home extends Component {
 
   render () {
     return (
-      <div className={styles.container} >
-        { this.getList() }
-      </div>
+      <Fragment>
+        <Helmet>
+          <title>SRR-Home</title>
+          <meta name='description' content='this is a home Component' />
+        </Helmet>
+        <div className={styles.container} >
+          { this.getList() }
+        </div>
+      </Fragment>
     )
   }
 
